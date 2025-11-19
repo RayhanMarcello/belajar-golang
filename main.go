@@ -111,4 +111,19 @@ func main() {
 		"address" : "borneo",
 	}
 	fmt.Println(person["name"])
+
+	// conditional statement
+	
+	if names[0] == "rayhan" {
+		fmt.Println(`halo`, names[0])
+	}else{
+		fmt.Println("kamu bukan rayhan")
+	}
+
+	if length := len(names[0]) ; length>7 {
+		fmt.Println("nama terlalu panjang")
+	}else{
+		fmt.Println("nama terlalu pendek")
+	}
+
 }	
