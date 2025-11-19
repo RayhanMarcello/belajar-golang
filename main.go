@@ -53,4 +53,24 @@ func main() {
 	a++
 	fmt.Println(a) // a = a + 1
 
-}
+	// perbandingan
+	var kalimat1 = "kontolodon"
+	var kalimat2 = "ambatukam"
+	result  := len(kalimat1) > len(kalimat2)
+	fmt.Println(result)
+
+	//operasi boolean (&&, ||, !)
+	number1 := false
+	number2 := true
+	resultNum := number1 && number2 
+	fmt.Println(resultNum)
+
+	var names [3]string
+	names[0] = "rayhan"
+	names[1] = "rayhan"
+	names[2] = "rayhan"
+	fmt.Println(names)
+
+	arr := []int{1,2,3}
+	fmt.Println(arr)
+}	
