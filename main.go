@@ -65,12 +65,50 @@ func main() {
 	resultNum := number1 && number2 
 	fmt.Println(resultNum)
 
-	var names [3]string
+	var names [4]string
 	names[0] = "rayhan"
-	names[1] = "rayhan"
-	names[2] = "rayhan"
+	names[1] = "marcello"
+	names[2] = "ananda"
+	names[3] = "purnomo"
 	fmt.Println(names)
 
-	arr := []int{1,2,3}
+	arr := [...]int{1,2,3}
 	fmt.Println(arr)
+
+	//function arr
+	panjangNames := len(names)
+	fmt.Println(panjangNames)
+
+	hasilArr := arr[0]
+	fmt.Println(hasilArr)
+
+	arr[0] = 100
+	fmt.Println(arr)
+
+	// slice (kayak aray tapi lebih dinamis)
+	slice := names[1:3]
+	fmt.Println(slice[0])
+	fmt.Println(slice[1])
+
+	// function slice
+
+	panjangSlice := len(slice)
+	fmt.Println(panjangSlice)
+
+	kapasitasSlice := cap(slice)
+	fmt.Println(kapasitasSlice)
+
+	addSlice := append(slice, "kontolodon")
+	fmt.Println(addSlice)
+
+	//bedanya array dan slice
+	// iniArray := [...]int{1,2,3,4,5}
+	// iniSlice := []int{1,2,3,4,5}
+
+	// tipe data map
+	person := map[string]string{
+		"name" : "rayhan",
+		"address" : "borneo",
+	}
+	fmt.Println(person["name"])
 }	
