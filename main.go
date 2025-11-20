@@ -5,6 +5,16 @@ import (
 	"strconv"
 )
 
+// function && parameter function
+func sayHello(firstName string, lastName string){
+	fmt.Println("say hello run brow", firstName, lastName)
+}
+
+// return value func
+func asalDaerah(daerah string) string{
+	return "halo saya dari" + daerah
+}
+
 func main() {
 	// membuat variabel cara 1
 	var nama string = "rayhan"
@@ -126,4 +136,34 @@ func main() {
 		fmt.Println("nama terlalu pendek")
 	}
 
+	// for loop
+	counter := []int{1,2,34,12}
+	counting := len(counter)
+	for i := 0;i < counting ;i++{
+		fmt.Println(counter[i])
+	}
+
+	// break & continue
+	for i:=1; i <=10; i++{
+		if(i == 5){
+			break
+		}
+		fmt.Println(i)
+	}
+
+	for i:=1; i <10; i++{
+		if i % 2 == 0{
+			fmt.Println("perulangan mod 2 habis dibagi ",i)
+			continue
+		}
+	}
+
+	// function
+	firstName := "rayhan"
+	lastName := "marcello"
+	sayHello(firstName,lastName)
+
+	// return value func
+	results := asalDaerah(" ambon")
+	fmt.Println(results)
 }	
