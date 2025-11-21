@@ -6,13 +6,53 @@ import (
 )
 
 // function && parameter function
-func sayHello(firstName string, lastName string){
+func sayHello(firstName, lastName string){
 	fmt.Println("say hello run brow", firstName, lastName)
 }
 
 // return value func
 func asalDaerah(daerah string) string{
 	return "halo saya dari" + daerah
+}
+
+// multipel return 
+func multiValueFunc(gg1 string, gg2 string) (string,string){
+	return gg1, gg2
+}
+
+// vaiadic func
+func sum(numberize ...int)int{
+	total := 0
+	for _, num := range numberize {
+		total += num
+	}
+	return total
+}
+
+// func value 
+func goodBye(namaLU string)string{
+	return "selamat tinggal"+ namaLU
+}
+
+// anonymus func
+type BlackList func(string) bool
+
+func registerUser(namaaa string, blackList BlackList){
+	if blackList(namaaa){
+		fmt.Println("u are blocked", namaaa)
+	}else{
+		fmt.Println("wellcome", namaaa)
+	}
+}
+
+// recrusif func
+// pake for loop
+func factorialLoop(values int)int{
+	result := 1
+	for i := values; i > 0; i--{
+		result = result*i
+	}
+	return result
 }
 
 func main() {
@@ -166,4 +206,32 @@ func main() {
 	// return value func
 	results := asalDaerah(" ambon")
 	fmt.Println(results)
+
+	// return multipel value
+	gg1 := "asade"
+	gg2 := "kontol"
+	hasil1, hasil2 := multiValueFunc(gg1,gg2)
+	fmt.Println(hasil1,hasil2)
+
+	// return varadic func
+	total1 := sum(1,2,3,4,5)
+	fmt.Println(total1)
+
+	// variabel as a value
+	goodbye := goodBye
+	fmt.Println(goodbye("adi"))
+
+	// annonymus func
+	blacklist := func(namaaa string) bool{
+		return namaaa == "anjing"
+	}
+
+	registerUser("anjing",blacklist)
+	//bisajuga =>
+	registerUser("rayhan", func(namaaa string) bool{
+		return namaaa == "anjing"
+	})
+
+	// recrusive menggunakan for
+	fmt.Println(factorialLoop(5))
 }	
