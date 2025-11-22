@@ -78,6 +78,28 @@ func jalankanApp(error bool){
 	}
 }
 
+	// struct (template data/ prototype data)
+	type Customer struct{     //untuk struct biasanya pake Pascalcase
+		Name, Address string
+		Age int
+	}
+
+// struct methode
+func(customer Customer) ngomongHello(name string){
+	fmt.Println("hellow " + customer.Name + "my name is" + name)
+}
+
+// Nil
+func NewMap(nameLUBRO string) map[string] string{
+	if nameLUBRO == ""{
+		return nil
+	}else{
+		return map[string]string{
+			"name" : nameLUBRO,
+		}
+	}
+}
+
 func main() {
 	// membuat variabel cara 1
 	var nama string = "rayhan"
@@ -275,4 +297,46 @@ func main() {
 	jalankanApp(true)
 
 
+	var identitas Customer
+	identitas.Name = "rayhan"
+	identitas.Address = "borneo paradiso"
+	identitas.Age = 20
+
+	fmt.Println(identitas)
+
+	//struct literals
+	joko := Customer{
+		Name : "joko",
+		Address: "sama kek rayhan",
+		Age: 50,
+	}
+	fmt.Println(joko)
+
+	// struct methode
+	joko.ngomongHello("agus")
+	
+	// nil
+	data := NewMap("jordan")
+	if data == nil {
+		fmt.Println("data kosong")
+	}else{
+		fmt.Println(data["name"])
+	}
+
+	// pointer (reference ke data yang sama dengan menggunakan (&))
+	type AddressUser struct{
+		City,Province,Country string
+	}
+
+	address1 := AddressUser{"balikpapan", "kalimantan", "indonesia"}
+	address2 := &address1 //pointer
+	address2.City = "kontolodon"
+
+	fmt.Println(address1)
+	fmt.Println(address2)
+
+	// asterisk operator
+	address2 = &AddressUser{"jakarta", "jawa", "indonesia"}
+	fmt.Println(address1)
+	fmt.Println(address2)
 }	
