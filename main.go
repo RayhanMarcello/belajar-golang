@@ -55,6 +55,29 @@ func factorialLoop(values int)int{
 	return result
 }
 
+// defer
+func logging(){
+	fmt.Println("selesai memanggil func")
+}
+
+func runApp(){
+	defer logging()
+	fmt.Println("run app...")
+}
+
+// panic & recover(mengambil pesan dari panic)
+func endApp(){
+	fmt.Println("menghentikan app..")
+	message := recover()
+	fmt.Println(message)
+}
+func jalankanApp(error bool){
+	defer endApp()
+	if error{
+		panic("error")
+	}
+}
+
 func main() {
 	// membuat variabel cara 1
 	var nama string = "rayhan"
@@ -233,5 +256,23 @@ func main() {
 	})
 
 	// recrusive menggunakan for
-	fmt.Println(factorialLoop(5))
+	fmt.Println(factorialLoop(3))
+
+	// closure
+	nilai:= 0
+	menghitung := func(){
+		fmt.Println("menghitung", nilai)
+		nilai++
+		fmt.Println("menghitung", nilai)
+	}
+
+	menghitung()
+	// defer
+
+	runApp()
+
+	// panic
+	jalankanApp(true)
+
+
 }	
